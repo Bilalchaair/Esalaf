@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DisplacementMap?>
+<?import javafx.scene.effect.FloatMap?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="574.0" prefWidth="937.0" style="-fx-background-color: #7a918d;" styleClass="form_container" stylesheets="/css/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exemple.model.ClientController">
+   <children>
+      <VBox layoutX="46.0" layoutY="67.0" prefHeight="485.0" prefWidth="360.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="67.0">
+         <children>
+            <Label text="Les informations des credits" textFill="#c5edac">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Text fill="#c5edac" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom:">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Text>
+            <TextField fx:id="tFName" maxHeight="33.0" maxWidth="150.0" minHeight="33.0" minWidth="150.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #93b1a7;">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin></TextField>
+            <Text fill="#c5edac" strokeType="OUTSIDE" strokeWidth="0.0" text="Commande:">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Text>
+            <TextField fx:id="tLastName" maxHeight="60.0" maxWidth="250.0" minHeight="60.0" minWidth="250.0" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #93b1a7;">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin></TextField>
+            <Text fill="#c5edac" strokeType="OUTSIDE" strokeWidth="0.0" text="Credit:">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Text>
+            <TextField fx:id="tCredit" maxHeight="33.0" maxWidth="50.0" minHeight="33.0" minWidth="50.0" prefHeight="33.0" prefWidth="50.0" style="-fx-background-color: #93b1a7;">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin></TextField>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnSave" mnemonicParsing="false" onAction="#creatClient" style="-fx-background-color: #96baa5;" text="save" textFill="#c5edac">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#updateClient" style="-fx-background-color: #96baa5;" text="edit" textFill="#c5edac">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteClient" style="-fx-background-color: #96baa5;" text="delete" textFill="#c5edac">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TableView fx:id="table" layoutX="413.0" layoutY="67.0" onMouseClicked="#getData" prefHeight="485.0" prefWidth="529.0" style="-fx-background-color: #93b1a7;" stylesheets="@../css/styles.css" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="67.0">
+        <columns>
+          <TableColumn fx:id="colid" prefWidth="44.0" text="ID" />
+          <TableColumn fx:id="colfName" prefWidth="126.0" text="Nom" />
+            <TableColumn fx:id="collName" prefWidth="256.0" text="Commande" />
+            <TableColumn fx:id="colCredit" prefWidth="102.0" text="Credit" />
+        </columns>
+      </TableView>
+      <Label contentDisplay="CENTER" layoutX="413.0" layoutY="14.0" text="ESALAF" textAlignment="CENTER" textFill="#c5edac" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="Bodoni MT Black" size="35.0" />
+         </font>
+         <effect>
+            <DisplacementMap offsetX="0.01" offsetY="0.01" scaleX="1.2" scaleY="1.2" wrap="true">
+               <mapData>
+                  <FloatMap />
+               </mapData>
+               <input>
+                  <SepiaTone />
+               </input>
+            </DisplacementMap>
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>
